@@ -10,9 +10,25 @@
     }
 </style>
 <body>
+    <!-- <form method="post" action="#">
+<label>First Name: </label> <input type='text' name='liveagent.prechat:ContactFirstName' /><br />
+<label>Last Name: </label> <input type='text' name='liveagent.prechat:ContactLastName' /><br />
+<label>Subject: </label> <input type='text' name='liveagent.prechat:CaseSubject' /><br />
+<input type="hidden" name="liveagent.prechat:CaseStatus" value="New" /><br />
+<input type="hidden" name="liveagent.prechat.findorcreate.map:Contact" value="FirstName,ContactFirstName;LastName,ContactLastName" />
+<input type="hidden" name="liveagent.prechat.findorcreate.map.doFind:Contact" value="FirstName,true;LastName,true" />
+<input type="hidden" name="liveagent.prechat.findorcreate.map.isExactMatch:Contact" value="FirstName,true;LastName,true" />
+<input type="hidden" name="liveagent.prechat.findorcreate.map.doCreate:Contact" value="FirstName,true;LastName,true" />
+<input type="hidden" name="liveagent.prechat.findorcreate.saveToTranscript:Contact" value="ContactId" />
+<input type="hidden" name="liveagent.prechat.findorcreate.showOnCreate:Contact" value="true" />
+<input type="hidden" name="liveagent.prechat.findorcreate.linkToEntity:Contact" value="Case,ContactId" />
+<input type="hidden" name="liveagent.prechat.findorcreate.map:Case" value="Subject,CaseSubject;Status,CaseStatus" />
+<input type="hidden" name="liveagent.prechat.findorcreate.map.doCreate:Case" value="Subject,true;Status,true" />
+<input type="submit" value="Submit" />
+</form> -->
 
     
-    <h2>HTML Forms</h2>
+    <h2>HTML View</h2>
     
     <form >
       <label for="fname">First name:</label><br>
@@ -24,7 +40,6 @@
       <input type="submit" value="Submit">
     </form> 
     
-    <p>If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".</p>
     
 <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
 <script type='text/javascript'>
@@ -35,6 +50,7 @@
         //embedded_svc.settings.defaultMinimizedText = '...'; //(Defaults to Chat with an Expert)
         //embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
 
+        //https://developer.salesforce.com/docs/atlas.en-us.live_agent_dev.meta/live_agent_dev/live_agent_creating_records_prechat_code_sample.htm
         //embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
         //embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
 
