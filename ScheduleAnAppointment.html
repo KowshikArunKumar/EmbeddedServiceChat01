@@ -9,7 +9,19 @@
 		outline: 1px solid #005290;
 	}
 </style>
-
+<body>
+	<h2>HTML View - SA</h2>
+    
+    <form >
+      <label for="fname">First name:</label><br>
+      <input type="text" id="fname" name="fname" value="John"><br>
+      <label for="lname">Last name:</label><br>
+      <input type="text" id="lname" name="lname" value="Doe"><br>
+      <label for="lname">Email:</label><br>
+      <input type="text" id="emailIdVar" name="emailIdVar" value="john.doe@salesforce.com"><br><br>
+      <input type="submit" value="Submit">
+    </form> 
+    
 <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
 <script type='text/javascript'>
 	var initESW = function(gslbBaseURL) {
@@ -56,4 +68,5 @@
 		initESW('https://service.force.com');
 	}
 </script>
+	</body>
 </html>
