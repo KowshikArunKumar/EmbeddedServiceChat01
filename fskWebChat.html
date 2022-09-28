@@ -167,7 +167,28 @@
 		
 		// TODO embedded_svc.settings.waitingStateBackgroundImgURL = "https://fiskergroupinc--c.visualforce.com/resource/1636020692000/FiskerLogo?";
                 // TODO embedded_svc.settings.chatbotAvatarImgURL = "https://fiskergroupinc--c.visualforce.com/resource/1636020692000/ChatBotAvatar?";
-        
+        embedded_svc.settings.extraPrechatInfo = [{
+            "entityFieldMaps": [{
+              "doCreate":false,
+              "doFind":true,
+              "fieldName":"LastName",
+              "isExactMatch":true,
+              "label":"Last Name"
+            }, {
+              "doCreate":false,
+              "doFind":true,
+              "fieldName":"FirstName",
+              "isExactMatch":true,
+              "label":"First Name"
+            }, {
+              "doCreate":false,
+              "doFind":true,
+              "fieldName":"Email",
+              "isExactMatch":true,
+              "label":"Email"
+            }],
+            "entityName":"Contact"
+          }];
                 embedded_svc.settings.extraPrechatFormDetails = 
                 [{"label":"Email", "transcriptFields": ["Chat_Contact_Email__c"]},
                  {"label":"First Name", "transcriptFields": ["Chat_Contact_First_Name__c"]},
