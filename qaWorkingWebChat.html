@@ -1,5 +1,6 @@
 <html>
 <head></head>
+	<!--
 <style type='text/css'>
 	.embeddedServiceHelpButton .helpButton .uiButton {
 		background-color: #005290;
@@ -8,10 +9,121 @@
 	.embeddedServiceHelpButton .helpButton .uiButton:focus {
 		outline: 1px solid #005290;
 	}
+</style> -->
+	
+	<style type='text/css'>
+
+    .embeddedServiceHelpButton .helpButton .uiButton {
+        /*background-color: #1d1f20;*/
+        background-color: #FBFBFB;
+        color: #131313;
+        border-radius: 0px;
+        font-family: "Arial", sans-serif;
+        width: 140px;
+        height: 30px; 
+        }
+     
+    .embeddedServiceSidebarFormField .slds-style-inputtext, .embeddedServiceSidebarFormField .slds-style-select{
+        Font-family: Fisker Plate Expanded Demibold;
+        Font-size: 13px;
+        Border-radius: 0px;
+        Border-color: #B1B1B1;
+        Background-color: #FBFBFB;
+        Color: #131313;
+        }
+    
+    .embeddedServiceHelpButton .helpButton {
+        width: 140px;
+        height: 30px;
+        }
+    
+    .embeddedServiceHelpButton .helpButton .uiButton:focus {
+        outline: 0px solid #005290;
+        border-radius: 0px;
+        font-family: "Arial", sans-serif;
+        width: 140px; !important
+        height: 30px; !important
+        }
+    
+    .message {
+        background-color: #FBFBFB;
+        border-style: solid;
+        /*border-width: 1px;*/
+        border: none;
+        color: #000;
+        font-weight: bold;
+        padding: 2px 2px 2px 2px;
+        margin: 0px 0px;
+        }
+    
+    .embeddedServiceSidebar.layout-docked .dockableContainer {
+        Font-family: "Fisker Plate Expanded Bold";
+        Font-size: 20px;
+        Border-radius: 0px;
+        Background-color: #FBFBFB;
+        Color:  #282828 ;
+        }
+           
+    .embeddedServiceSidebarButton {
+        Font-family: "Fisker Plate Expanded Bold";
+        Font-size: 20px;
+        Border-radius: 0px;
+        Background-color: #282828:
+        Color: #FBFBFB;
+        }
+        
+    .embeddedServiceLiveAgentStateChat .chatSessionStartTime {
+        Font-family: "Fisker Plate Expanded Bold";
+        Font-size: 12px;
+        Color: #282828;
+        }
+        
+    .embeddedServiceLiveAgentStateChatPlaintextMessageDefaultUI.agent.plaintextContent {
+        Font-family: "Fisker Plate Expanded Regular";
+        Font-size: 13px;
+        Border-radius: 0px;
+        Background-color: #EDEDED;
+        Color: #282828;
+        }
+               
+    .embeddedServiceSidebarMinimizedDefaultUI {
+        padding:0px;
+        margin:0px;
+        Font-family: "Fisker Plate Expanded Bold";
+        Font-size: 15px;
+        Border-radius: 0px;
+        Background-color: #FBFBFB;
+        Color: #131313;
+        Width: 140px;
+        Height: 30px;
+        min-width: 140px;
+        max-width: 140px;
+        }
+            
+    .embeddedServiceLiveAgentStateChatItem.chatMessage button {
+        Font-family: "Fisker Plate Expanded Regular";
+        Font-size: 13px;
+        Border-radius: 0px;
+        Background-color: #EDEDED;
+        Color: #282828;
+        }
+    
+    .embeddedServiceLiveAgentStateChatItem .chatContent ul.rich-menu-items li:first-of-type {
+        border-radius: 0px;
+        }
+
+    .embeddedServiceLiveAgentStateChatItem .chatContent ul.rich-menu-items li:last-of-type {
+        border-radius: 0px;
+        }
+
+    .embeddedServiceIcon svg {
+        fill: #282828;
+    }
+    
 </style>
 <body>
   
-   <h2>HTML View</h2>
+   <h2>HTML View for Fisker Bot - FSL QA</h2>
     
     <form >
       <label for="fname">First name:</label><br>
@@ -28,7 +140,7 @@
 <script type='text/javascript'>
 	var initESW = function(gslbBaseURL) {
 		embedded_svc.settings.displayHelpButton = true; //Or false
-		embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
+		embedded_svc.settings.language = 'en_US'; //For example, enter 'en' or 'en-US'
 
 		//embedded_svc.settings.defaultMinimizedText = '...'; //(Defaults to Chat with an Expert)
 		//embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
@@ -44,11 +156,11 @@
 		//embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
 		//embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
 		//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
-   embedded_svc.settings.prepopulatedPrechatFields = {
+
+        embedded_svc.settings.prepopulatedPrechatFields = {
             FirstName: document.getElementById("fname").value,
             LastName: document.getElementById("lname").value,
-            Email: document.getElementById("emailIdVar").value,
-            Subject: "Hello"
+            Email: document.getElementById("emailIdVar").value
         };
         embedded_svc.settings.extraPrechatInfo = [{
             "entityFieldMaps": [{
@@ -72,23 +184,28 @@
             }],
             "entityName":"Contact"
           }];
-    
-    
+       
 		embedded_svc.settings.enabledFeatures = ['LiveAgent'];
 		embedded_svc.settings.entryFeature = 'LiveAgent';
+		
+		embedded_svc.settings.extraPrechatFormDetails = 
+                [{"label":"Email", "transcriptFields": ["Chat_Contact_Email__c"]},
+                 {"label":"First Name", "transcriptFields": ["Chat_Contact_First_Name__c"]},
+	         {"label":"Last Name", "transcriptFields": ["Chat_Contact_Last_Name__c"]},
+		 {"label": "Lang","value": "en_US","transcriptFields": ["Chat_Language__c"],"displayToAgent": false}];
 
 		embedded_svc.init(
 			'https://fiskergroupinc--fslqa.sandbox.my.salesforce.com',
-			'https://fiskergroupinc--fslqa.sandbox.my.site.com/unsubscribe',
+			'https://fiskergroupinc--fslqa.sandbox.my.salesforce-sites.com/',
 			gslbBaseURL,
 			'00D8J0000008ha5',
-			'WebChat_Group',
+			'FiskerSiteBotEmbedded_Service',
 			{
 				baseLiveAgentContentURL: 'https://c.la4-c1cs-ia5.salesforceliveagent.com/content',
-				deploymentId: '5728J000000002G',
-				buttonId: '5738J000000002k',
+				deploymentId: '5725e000000Ms79',
+				buttonId: '5735e000000MtKI',
 				baseLiveAgentURL: 'https://d.la4-c1cs-ia5.salesforceliveagent.com/chat',
-				eswLiveAgentDevName: 'WebChat_Group',
+				eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I5e000000DnEOEA0_17cfecd7251',
 				isOfflineSupportEnabled: false
 			}
 		);
