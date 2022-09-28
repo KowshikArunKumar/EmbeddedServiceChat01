@@ -166,7 +166,8 @@
                 embedded_svc.settings.extraPrechatFormDetails = 
                 [{"label":"Email", "transcriptFields": ["Chat_Contact_Email__c"]},
                  {"label":"First Name", "transcriptFields": ["Chat_Contact_First_Name__c"]},
-	         {"label":"Last Name", "transcriptFields": ["Chat_Contact_Last_Name__c"]}];
+	         {"label":"Last Name", "transcriptFields": ["Chat_Contact_Last_Name__c"]},
+		 {"label": "Lang","value": "en_US","transcriptFields": ["Chat_Language__c"],"displayToAgent": false}];
 
 		embedded_svc.init(
 			'https://fiskergroupinc--fslsandbox.my.salesforce.com',
