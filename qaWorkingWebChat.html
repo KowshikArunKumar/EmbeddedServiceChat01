@@ -123,8 +123,10 @@
 </style>
 <body>
   
-   <h2>HTML View for Fisker Bot - FSL QA</h2>
+   
     <img src="FiskerBackground.jfif" alt="Fisker Logo" class="inline"/>
+   <!-- 
+    <h2>HTML View for Fisker Bot - FSL QA</h2>
     <form >
       <label for="fname">First name:</label><br>
       <input type="text" id="fname" name="fname" value="Fisker"><br>
@@ -133,7 +135,7 @@
       <label for="lname">Email:</label><br>
       <input type="text" id="emailIdVar" name="emailIdVar" value="snair@fiskerinc.com"><br><br>
       <input type="submit" value="Submit">
-    </form> 
+    </form> -->
     
   
 <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
@@ -158,9 +160,9 @@
 		//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
 
         embedded_svc.settings.prepopulatedPrechatFields = {
-            FirstName: document.getElementById("fname").value,
-            LastName: document.getElementById("lname").value,
-            Email: document.getElementById("emailIdVar").value
+            FirstName: 'Fisker',//document.getElementById("fname").value,
+            LastName: 'VIP',//document.getElementById("lname").value,
+            Email: 'snair@fiskerinc.com'//document.getElementById("emailIdVar").value
         };
         embedded_svc.settings.extraPrechatInfo = [{
             "entityFieldMaps": [{
